@@ -20,7 +20,7 @@ module.exports.saveAtool = async (req, res, next) => {
   try {
     const db = getDb();
     const tool = req.body;
-    const savedTool = await db.collection("users").insertOne(tools);
+    const savedTool = await db.collection("users").insertOne(tool);
     console.log(savedTool);
     res.send("Tool Saved Successfully");
   } catch (error) {
