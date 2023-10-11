@@ -33,6 +33,7 @@ module.exports.saveAtool = async (req, res, next) => {
     const db = getDb();
     const tool = req.body;
     const savedTool = await db.collection("users").insertOne(tool);
+<<<<<<< HEAD
     if (!savedTool.insertedId) {
       return res
         .status(400)
@@ -61,6 +62,10 @@ module.exports.toolDetails = async (req, res, next) => {
       .collection("users")
       .findOne({ _id: new ObjectId(id) });
     return res.status(200).send({ success: true, data: foundTool });
+=======
+    console.log(savedTool);
+    res.send("Tool Saved Successfully");
+>>>>>>> 727449b6baf5827f1af0fde4408bd1309f98ce87
   } catch (error) {
     next(error);
   }
